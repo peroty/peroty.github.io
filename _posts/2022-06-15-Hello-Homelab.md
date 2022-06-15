@@ -1,8 +1,8 @@
 ---
 title: Hello Homelab
 date: 2022-06-14 17:00:00 - 500
-categories: [test,intro] 
-tag: [] # All lowercase
+categories: [intro] 
+tag: [setup] # All lowercase
 layout: post
 
 ---
@@ -15,3 +15,14 @@ I have to many text files. Markdown flows all over my hard drive. And I wanted s
 
 Instead of losing them forever on my hard drive, they would be public and hosted so others might benefit from them, or Future Carl could find them.
 
+So... even though Tim doesn't show it in the video, you need to add a date to your `post` titles, otherwise they won't show up and you'll be scratching your head.
+
+He does note this on his documentation site.
+
+> [Meet Jekyll - The Static Site Generator | Techno Tim Documentation](https://docs.technotim.live/posts/jekyll-docs-site/)  
+> Create a file in _posts with the format  `YEAR-MONTH-DAY-title.MARKUP`
+>
+>For example: 
+>
+>2022-05-23-homelab-docs.md  
+> 2022-05-34-hardware-specs.md  
