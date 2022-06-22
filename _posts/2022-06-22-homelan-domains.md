@@ -38,6 +38,7 @@ Same process. I can replace the NewProject.lan with NewProject.speedacer.com and
 If I want the domain to resolve outside of my home, I login to namecheap, my domain registrar, and add the subdomain there. That's it.
 
 ![rss domain in namecheap](/assets/images/namecheap-rss.png)
+*Obviously, not my real IP address.*
 Now I can access my RSS reader from home with rss.lan or remotely with rss.domain.tld.
 
 I've also setup a VPN so I can access my homelab remotely without granting public access. But that's a story for another day.
