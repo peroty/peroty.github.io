@@ -11,7 +11,7 @@ layout: post
 
 > Note: Last night was the first time this all really clicked for me and I was able to consistently get a local domain name up and running inside my house, and add public access as I saw fit. It was a real lightbulb moment so I wanted to expand my quickly scribbled notes into something more permanent for Future Me and hopefully it'll help someone else out there who is struggling with DNS.
 
-![a DNS haiku: It's not DNS/ There's no way it's DNS / It was DNS](../assets/images/dns-haiku.png)
+![a DNS haiku: It's not DNS/ There's no way it's DNS / It was DNS](/assets/images/dns-haiku.png)
 
 The domain needs to be added to the proxy server. In this case, Nginx Proxy Manager (NPM) running in Docker is taking care of the proxy setup. 
 
