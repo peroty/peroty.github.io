@@ -25,19 +25,19 @@ I've chosen .lan for my homelab.
 2. Add the .lan name to the local DNS records of the pihole DNS server.
 3. (optional) Add the fully qualified domain name (FQDN) if you want to later resolve it publicly.
 
-![rss domain in nginx proxy manager](../assets/images/npm-rss.png)
+![rss domain in nginx proxy manager](/assets/images/npm-rss.png)
 
 **What if I want to use a real domain name I own?**
 
 Same process. I can replace the NewProject.lan with NewProject.speedacer.com and it resolves internally.
 
-![rss local domain in pihole dns](../assets/images/dns-rss.png)
+![rss local domain in pihole dns](/assets/images/dns-rss.png)
 
 **What if I want the domain to be publicly available?**
 
 If I want the domain to resolve outside of my home, I login to namecheap, my domain registrar, and add the subdomain there. That's it.
 
-![rss domain in namecheap](../assets/images/namecheap-rss.png)
+![rss domain in namecheap](/assets/images/namecheap-rss.png)
 Now I can access my RSS reader from home with rss.lan or remotely with rss.domain.tld.
 
 I've also setup a VPN so I can access my homelab remotely without granting public access. But that's a story for another day.
