@@ -1,7 +1,7 @@
 ---
-title: Livepatch your Linux!
+title: Livepatch your Linux
 date: 2022-10-13 16:15:00 - 500
-categories: [ubuntu]] 
+categories: [ubuntu]
 tag: [security, updates] # All lowercase
 layout: post
 ---
