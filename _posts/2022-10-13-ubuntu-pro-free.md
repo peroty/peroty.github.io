@@ -1,10 +1,11 @@
 ---
-title: Ubuntu Pro free for 5 users - LivePatch your Linux!
+title: Livepatch your Linux!
 date: 2022-10-13 16:15:00 - 500
 categories: [ubuntu]] 
 tag: [security, updates] # All lowercase
 layout: post
 ---
+
 # Ubuntu Pro free for 5 users - LivePatch your Linux
 
 Today I Learned Ubuntu made their Ubuntu Pro service available for free up to 5 users from [The Homelab Show: Episode 75](https://thehomelab.show/2022/10/13/the-homelab-show-ep-75-homelab-privacy-security-and-qa/). I've linked it with timestamp on Youtube but it's just past 35 mins.
