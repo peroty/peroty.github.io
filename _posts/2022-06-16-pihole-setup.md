@@ -2,7 +2,7 @@
 title: Pi-hole setup
 date: 2022-06-16 16:06:00 - 500
 categories: [Pi-hole, docker] 
-tag: [Pi-hole, setup] # All lowercase
+tag: [pi-hole, setup] # All lowercase
 layout: post
 
 ---
