@@ -1,0 +1,79 @@
+[
+  
+  {
+    "title": "Argon Case? Big Fan!",
+    "url": "/posts/argon-fan/",
+    "categories": "pi, server, hardware",
+    "tags": "argon, case, hardware repair",
+    "date": "2022-06-28 09:06:00 -0400",
+    
+
+
+
+
+
+    "snippet": "I really like the Argon ONE M.2 Case for Raspberry Pi 4. One day last week I woke up to my little Rasberry Pi 4 NAS and Docker server offline. I went to investigate and found it powered off.We had some storms roll through recently and I thought maybe it has lost power during the night. I powered it back on and wwwhhhhiiirrrrzzzzzbbbuuuuuzzzzzz.Well, that’s not ideal.The only storage in the case is an NVMe drive so it’s not storage since there’s no moving parts. There is a case fan that is causing the noise. It sounds like the fan is dying.So I go about disassembling the case and pulled the fan out. It spun freely and there was no damage or issues upon visual inspection.So I plugged it back into the case and powered it on and it made the same noise. I blew it out with canned air and set the case and fan back on the desk.Since the fan worked and sounded better when I plugged it back in, I reassembled the case. I hoped it would remain quiet and working since I was not able to find a replacement fan anywhere. Argon doesn’t appear to sell one with the proper connector for the case. My efforts to find anything similar on Amazon or eBay were all unsuccessful.In my searching for a new fan I found there is a script from Argon to control the fan speed.I came across this repo, which is not offerd by Argon but is a hqppy customer. I’m thankful to have some across his repo since he not only links to the official script (hosted on Argon’s servers) but also documents how to use it. Another thing I found missing from Argon’s site and repo.okunze/Argon40-ArgonOne-Script: Script for the Argon ONE Pi 4 Raspberry Pi Case  I have been using the Argon ONE (V2) Case for Raspberry Pi 4 for a long time and I am very happy with it.  To be able to use the case to the full extent, it is recommended to install the script offered by Argon 40.  I have saved a copy here along with the instructions to have a copy in case Argon 40 no longer offers it themselves.  Just to clarify: I am in no way affiliated with Argon 40, I only use their cases as an end user.The official Argon repo has links to the installers if you’re prefer to fo straight to the source. The code for the script itself does not appear to be in the repo however, not that I looked very hard.I’ve owned this case for 8 months and had no idea this script existed. They do mention a “proprietary script” on the page for the case without storage.  The case is still a heatsink and cools the Raspberry Pi with its fan (especially with its propietary script) but the fan is much more quiet than before to keep the Pi cool without causing any noise in the background. - Argon ONE V2 Case for Raspberry Pi 4 – argon40But they don’t link to it from that page. Nor do they even mention there is a script on the version with storage which I would think is more important since there’s more heat generated.Now that I know the script exists and installed it, the fan hasn’t spun up once that I’ve heard. And it made a quiet whiiirrrr before when it was running.I suspect the fan was running constantly, even though it wasn’t needed. I don’t know if that’s what caused the fan’s issues or not. But learning of the script’s existence has resolved the issue for now.I did email Argon 40 support asking about a fan replacement and got a reply asking for more details so we’ll see where this goes. At least for now I have my smallest “server” back online happily chugging away on a shelf."
+  },
+  
+  {
+    "title": "Setting up domain names for homelab",
+    "url": "/posts/homelan-domains/",
+    "categories": "homelab, DNS",
+    "tags": "pi-hole, dns, proxy",
+    "date": "2022-06-22 09:54:00 -0400",
+    
+
+
+
+
+
+    "snippet": "How to stop typing ip addresses and ports and use real names in your homelab  Note: Last night was the first time this all really clicked for me and I was able to consistently get a local domain name up and running inside my house, and add public access as I saw fit. It was a real lightbulb moment so I wanted to expand my quickly scribbled notes into something more permanent for Future Me and hopefully it’ll help someone else out there who is struggling with DNS.The domain needs to be added to the proxy server. In this case, Nginx Proxy Manager (NPM) running in Docker is taking care of the proxy setup.Once the proxy associates the domain to the ip:port, then we need a DNS server to handle the DNS routing and name lookup. Pihole with Unbound is serving that purpose and doing it well. It’s very easy to get installed and setup. It’s lightweight enough to run on a raspberry pi zero. I have an additional pihole running in proxmox for some redundancy so if either device is down, DNS will still work.How to setup a local domainI’ve chosen .lan for my homelab.  Add the domain to nginx proxy manager  Add the .lan name to the local DNS records of the pihole DNS server.  (optional) Add the fully qualified domain name (FQDN) if you want to later resolve it publicly.What if I want to use a real domain name I own?Same process. I can replace the NewProject.lan with NewProject.speedacer.com and it resolves internally.What if I want the domain to be publicly available?If I want the domain to resolve outside of my home, I login to namecheap, my domain registrar, and add the subdomain there. That’s it.Obviously, not my real IP address.Now I can access my RSS reader from home with rss.lan or remotely with rss.domain.tld.I’ve also setup a VPN so I can access my homelab remotely without granting public access. But that’s a story for another day."
+  },
+  
+  {
+    "title": "Pi-hole setup",
+    "url": "/posts/pihole-setup/",
+    "categories": "Pi-hole, docker",
+    "tags": "Pi-hole, setup",
+    "date": "2022-06-16 16:06:00 -0400",
+    
+
+
+
+
+
+    "snippet": "I decided it was time to setup a Pi-hole on the raspberry pi zero w that’s been sitting idle. I wanted to get it running on both my Pi4 running docker and this pi zero as a backup so if one was out of comission, reboot, or (most likely) if I broke something, I wouldn’t lose my DNS server.Pi-hole on a Pi Zero WThe Pi Zero W installation went smoothly.I was confident I could install Pi-hole, but I wasn’t sure how best to get unbound up and running. So I followed Craft Computing’s excellent walkthrough.The key was to grab the unbound configuration from the example site without a single edit.Seriously, take this whole file, save it where they tell you and restart. I am sure there is some editing or tweaking I can (should?) be doing. But as for going from Zero to Working, this could not have been easier.Pi-hole on Docker on a Pi 4For Pi-hole on Docker, I am using the excellent template compiled by Novaspirit Tech as part of his pi-hosted youtube series.novaspirit/pi-hosted: Raspberry Pi Self Hosted Server Based on Docker / Portainer.ioIf you need a tutorial, I used the pi-hole and unbound installationFor the Pi-hole on docker, I ran into a bit of a problem. Everything worked, but there was still an error message I was seeing.[1655407674] unbound[537:0] warning: so-rcvbuf 1048576 was not granted. Got 360448. To fix: start with root permissions(linux) or sysctl bigger net.core.rmem_max(linux) or kern.ipc.maxsockbuf(bsd) values.I had only a vague notion of what this meant to so I went looking and found a straight forward answer from Telesphoreo.  For anyone who is having this problem (even on non Docker) the solution is to edit the /etc/sysctl.conf file and add this line somewhere in the file: net.core.rmem_max=1048576  After I rebooted, you can now run sudo service unbound status and no more error! I’m posting the solution here since this is the first thing that shows up on google when you search for it hope that’s okayPerfect. I connected to the console of the docker container in Portainer, tried to run nano, installed nano with from apt, then made the correction and restarted the docker container. No more error. :)Next Steps      Accessorize!    I plan to get either a hat for pi zero to give it ethernet, or get a USB to ethernet adapter. For now, it’s a backup and runs off wifi but I’d like to get it wired and then stash it next to my router.        Sync!    I saw Techno Tim has a video about syncing instances of Pi-hole together. High Availability Pi-Hole? Yes please! Now that I’ve got two instances running, I’d like them to know about each other and sync them. If I make changes, I don’t want to have to remember to do this twice.        WAF Testing    Similar to User Acceptance Testing, the Wife Acceptance Factor is a vital part of anything that affect the entire house. Last time I played with Pi-hole, it broke weird things when she’d click through things from Instagram and other places.        Groups    I see that Pi-hole has groups so that might be part of the answer. Setup some devices to run through this DNS and adblocker and send some directly through to the internet.        Add Pi-hole to Wireguard VPN    When I setup wireguard I did not have a working Pi-hole installation at the time so I skipped it. Now that I have not one, but two Pi-holes, I want to run the VPN through them so when I am connecting remotely, I will get the additional ad-blocking features. Since I use Google Fi as my cell phone provider, any ads and auto-playing videos I can block will save me money on my bill.  "
+  },
+  
+  {
+    "title": "Hello, Jen",
+    "url": "/posts/new-post/",
+    "categories": "test",
+    "tags": "test",
+    "date": "2022-06-15 07:17:00 -0400",
+    
+
+
+
+
+
+    "snippet": "Hello, Jen!Let’s change this new post around and see what happens. If it works… at all…"
+  },
+  
+  {
+    "title": "Hello Homelab",
+    "url": "/posts/Hello-Homelab/",
+    "categories": "intro",
+    "tags": "setup",
+    "date": "2022-06-14 17:00:00 -0400",
+    
+
+
+
+
+
+    "snippet": "Getting setupTechno Tim, One of my favorite Youtube homelabbers produced a video on Jekyll and getting it setup and running on Github pages. I’ve long gone back and forth on Hugo vs. Jekyll. I have a WordPress blog (a few of them.) But it’s going in a different direction than I am.I have to many text files. Markdown flows all over my hard drive. And I wanted some easier way to take those files and present them not only to myself to remember what I had done, but to save those notes in a public-ish way.Instead of losing them forever on my hard drive, they would be public and hosted so others might benefit from them, or Future Carl could find them.So… even though Tim doesn’t show it in the video, you need to add a date to your post titles, otherwise they won’t show up and you’ll be scratching your head.He does note this on his documentation site.  Meet Jekyll - The Static Site Generator | Techno Tim DocumentationCreate a file in _posts with the format  YEAR-MONTH-DAY-title.MARKUP  For example:  2022-05-23-homelab-docs.md2022-05-34-hardware-specs.md"
+  }
+  
+]
+

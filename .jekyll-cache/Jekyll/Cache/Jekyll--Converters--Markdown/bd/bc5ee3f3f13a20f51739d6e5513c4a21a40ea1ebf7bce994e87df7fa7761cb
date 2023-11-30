@@ -1,0 +1,2 @@
+I"-<p>I decided it was time to setup a Pi-hole on the raspberry pi zero w that’s been sitting idle. I wanted to get it running on both my Pi4 running docker and this pi zero as a backup so if one was out of comission, reboot, or (most likely) if I broke something, I wouldn’t lose my DNS server.</p>
+:ET

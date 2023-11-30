@@ -1,0 +1,48 @@
+I"�<p>I really like the <a href="https://www.argon40.com/products/argon-one-m-2-case-for-raspberry-pi-4?variant=39730210308161">Argon ONE M.2 Case for Raspberry Pi 4</a>. One day last week I woke up to my little Rasberry Pi 4 NAS and Docker server offline. I went to investigate and found it powered off.</p>
+
+<p>We had some storms roll through recently and I thought maybe it has lost power during the night. I powered it back on and <em>wwwhhhhiiirrrrzzzzzbbbuuuuuzzzzzz</em>.</p>
+
+<p>Well, that’s not ideal.</p>
+
+<p>The only storage in the case is an NVMe drive so it’s not storage since there’s no moving parts. There is a case fan that is causing the noise. It sounds like the fan is dying.</p>
+
+<p>So I go about disassembling the case and pulled the fan out. It spun freely and there was no damage or issues upon visual inspection.</p>
+
+<p><img src="/assets/images/argon40-one-case-fan.jpg" alt="Case fan for Argon 40 One case" /></p>
+
+<p>So I plugged it back into the case and powered it on and it made the same noise. I blew it out with canned air and set the case and fan back on the desk.</p>
+
+<p>Since the fan worked and sounded better when I plugged it back in, I reassembled the case. I hoped it would remain quiet and working since I was not able to find a replacement fan anywhere. Argon doesn’t appear to sell one with the proper connector for the case. My efforts to find anything similar on Amazon or eBay were all unsuccessful.</p>
+
+<p>In my searching for a new fan I found there is a script from Argon to control the fan speed.</p>
+
+<p>I came across this repo, which is not offerd by Argon but is a hqppy customer. I’m thankful to have some across his repo since he not only links to the official script (hosted on Argon’s servers) but also documents how to use it. Another thing I found missing from Argon’s site and repo.</p>
+
+<p><a href="https://github.com/okunze/Argon40-ArgonOne-Script">okunze/Argon40-ArgonOne-Script: Script for the Argon ONE Pi 4 Raspberry Pi Case</a></p>
+
+<blockquote>
+  <p>I have been using the <a href="https://www.argon40.com/collections/raspberry-pi-cases">Argon ONE (V2) Case for Raspberry Pi 4</a> for a long time and I am very happy with it.</p>
+
+  <p>To be able to use the case to the full extent, it is recommended to install the <a href="https://download.argon40.com/argon1.sh">script</a> offered by Argon 40.</p>
+
+  <p>I have saved a copy here along with the instructions to have a copy in case Argon 40 no longer offers it themselves.</p>
+
+  <p>Just to clarify: I am in no way affiliated with Argon 40, I only use their cases as an end user.</p>
+</blockquote>
+
+<p>The <a href="https://github.com/Argon40Tech/Argon40case/blob/2faf0f1da26f22396c945e2a37549d9ed396b852/README.md#official-installers">official Argon repo</a> has links to the installers if you’re prefer to fo straight to the source. The code for the <a href="https://download.argon40.com/argon1.sh">script</a> itself does not appear to be in the repo however, not that I looked very hard.</p>
+
+<p>I’ve owned this case for 8 months and had no idea this script existed. They do mention a “proprietary script” on the page for the case without storage.</p>
+
+<blockquote>
+  <p>The case is still a heatsink and cools the Raspberry Pi with its fan (especially with its propietary script) but the fan is much more quiet than before to keep the Pi cool without causing any noise in the background. - <a href="https://www.argon40.com/products/argon-one-v2-case-for-raspberry-pi-4?_pos=3&amp;_sid=4e26cefff&amp;_ss=r">Argon ONE V2 Case for Raspberry Pi 4 – argon40</a></p>
+</blockquote>
+
+<p>But they don’t link to it from that page. Nor do they even mention there is a script on the <a href="https://www.argon40.com/products/argon-one-m-2-case-for-raspberry-pi-4">version with storage</a> which I would think is more important since there’s more heat generated.</p>
+
+<p>Now that I know the script exists and installed it, the fan hasn’t spun up once that I’ve heard. And it made a quiet <em>whiiirrrr</em> before when it was running.</p>
+
+<p>I suspect the fan was running constantly, even though it wasn’t needed. I don’t know if that’s what caused the fan’s issues or not. But learning of the script’s existence has resolved the issue for now.</p>
+
+<p>I did email Argon 40 support asking about a fan replacement and got a reply asking for more details so we’ll see where this goes. At least for now I have my smallest “server” back online happily chugging away on a shelf.</p>
+:ET

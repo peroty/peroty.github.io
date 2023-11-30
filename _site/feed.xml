@@ -1,0 +1,223 @@
+
+
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>http://localhost:4000/</id>
+  <title>Homelab</title>
+  <subtitle>A minimal, responsive, and powerful Jekyll theme for presenting professional writing.</subtitle>
+  <updated>2022-06-28T10:06:03-04:00</updated>
+  <author>
+    <name>Carl</name>
+    <uri>http://localhost:4000/</uri>
+  </author>
+  <link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml"/>
+  <link rel="alternate" type="text/html" hreflang="en"
+    href="http://localhost:4000/"/>
+  <generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator>
+  <rights> © 2022 Carl </rights>
+  <icon>/assets/img/favicons/favicon.ico</icon>
+  <logo>/assets/img/favicons/favicon-96x96.png</logo>
+
+
+  
+  <entry>
+    <title>Argon Case? Big Fan!</title>
+    <link href="http://localhost:4000/posts/argon-fan/" rel="alternate" type="text/html" title="Argon Case? Big Fan!" />
+    <published>2022-06-28T09:06:00-04:00</published>
+  
+    <updated>2022-06-28T10:01:58-04:00</updated>
+  
+    <id>http://localhost:4000/posts/argon-fan/</id>
+    <content src="http://localhost:4000/posts/argon-fan/" />
+    <author>
+      <name>Carl</name>
+    </author>
+
+  
+    
+    <category term="pi" />
+    
+    <category term="server" />
+    
+    <category term="hardware" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      I really like the Argon ONE M.2 Case for Raspberry Pi 4. One day last week I woke up to my little Rasberry Pi 4 NAS and Docker server offline. I went to investigate and found it powered off.
+
+We had some storms roll through recently and I thought maybe it has lost power during the night. I powered it back on and wwwhhhhiiirrrrzzzzzbbbuuuuuzzzzzz.
+
+Well, that’s not ideal.
+
+The only storage in th...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>Setting up domain names for homelab</title>
+    <link href="http://localhost:4000/posts/homelan-domains/" rel="alternate" type="text/html" title="Setting up domain names for homelab" />
+    <published>2022-06-22T09:54:00-04:00</published>
+  
+    <updated>2022-06-22T10:54:06-04:00</updated>
+  
+    <id>http://localhost:4000/posts/homelan-domains/</id>
+    <content src="http://localhost:4000/posts/homelan-domains/" />
+    <author>
+      <name>Carl</name>
+    </author>
+
+  
+    
+    <category term="homelab" />
+    
+    <category term="DNS" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      How to stop typing ip addresses and ports and use real names in your homelab
+
+
+  Note: Last night was the first time this all really clicked for me and I was able to consistently get a local domain name up and running inside my house, and add public access as I saw fit. It was a real lightbulb moment so I wanted to expand my quickly scribbled notes into something more permanent for Future Me an...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>Pi-hole setup</title>
+    <link href="http://localhost:4000/posts/pihole-setup/" rel="alternate" type="text/html" title="Pi-hole setup" />
+    <published>2022-06-16T16:06:00-04:00</published>
+  
+    <updated>2022-06-16T16:06:00-04:00</updated>
+  
+    <id>http://localhost:4000/posts/pihole-setup/</id>
+    <content src="http://localhost:4000/posts/pihole-setup/" />
+    <author>
+      <name>Carl</name>
+    </author>
+
+  
+    
+    <category term="Pi-hole" />
+    
+    <category term="docker" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      I decided it was time to setup a Pi-hole on the raspberry pi zero w that’s been sitting idle. I wanted to get it running on both my Pi4 running docker and this pi zero as a backup so if one was out of comission, reboot, or (most likely) if I broke something, I wouldn’t lose my DNS server.
+
+Pi-hole on a Pi Zero W
+
+The Pi Zero W installation went smoothly.
+
+I was confident I could install Pi-hole...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>Hello, Jen</title>
+    <link href="http://localhost:4000/posts/new-post/" rel="alternate" type="text/html" title="Hello, Jen" />
+    <published>2022-06-15T07:17:00-04:00</published>
+  
+    <updated>2022-06-15T11:28:06-04:00</updated>
+  
+    <id>http://localhost:4000/posts/new-post/</id>
+    <content src="http://localhost:4000/posts/new-post/" />
+    <author>
+      <name>Carl</name>
+    </author>
+
+  
+    
+    <category term="test" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Hello, Jen!
+
+Let’s change this new post around and see what happens. If it works… at all…
+
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>Hello Homelab</title>
+    <link href="http://localhost:4000/posts/Hello-Homelab/" rel="alternate" type="text/html" title="Hello Homelab" />
+    <published>2022-06-14T17:00:00-04:00</published>
+  
+    <updated>2022-06-15T11:28:06-04:00</updated>
+  
+    <id>http://localhost:4000/posts/Hello-Homelab/</id>
+    <content src="http://localhost:4000/posts/Hello-Homelab/" />
+    <author>
+      <name>Carl</name>
+    </author>
+
+  
+    
+    <category term="intro" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Getting setup
+
+Techno Tim, One of my favorite Youtube homelabbers produced a video on Jekyll and getting it setup and running on Github pages. I’ve long gone back and forth on Hugo vs. Jekyll. I have a WordPress blog (a few of them.) But it’s going in a different direction than I am.
+
+I have to many text files. Markdown flows all over my hard drive. And I wanted some easier way to take those fi...
+    </summary>
+  
+
+  </entry>
+
+</feed>
+
+
