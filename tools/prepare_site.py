@@ -19,6 +19,12 @@ if not (blog_dir / "index.html").is_file():
 shutil.copytree("landing", site_dir, dirs_exist_ok=True)
 shutil.copyfile("tools/unregister_homelab.js", blog_dir / "unregister.js")
 
+# Keep existing feed subscriptions and crawler entry points working.
+for filename in ("feed.xml", "sitemap.xml", "robots.txt"):
+    source = blog_dir / filename
+    if source.is_file():
+        shutil.copyfile(source, site_dir / filename)
+
 # Old root-level post and section links should continue to reach their pages.
 for page in blog_dir.rglob("index.html"):
     relative = page.relative_to(blog_dir)
