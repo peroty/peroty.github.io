@@ -53,6 +53,7 @@ build() {
 
   # build
   JEKYLL_ENV=production bundle exec jekyll b -d "$SITE_DIR$_baseurl" --config "$_config"
+  python3 tools/prepare_site.py "$SITE_DIR" "$_baseurl"
 }
 
 test() {
@@ -60,16 +61,8 @@ test() {
     --disable-external \
     --check-html \
     --allow_hash_href \
+    --url-ignore '/11ty-blog/' \
     "$SITE_DIR"
-}
-
-resume_site_dir() {
-  if [[ -n $_baseurl ]]; then
-    # Move the site file to the regular directory '_site'
-    mv "$SITE_DIR$_baseurl" "${SITE_DIR}-rename"
-    rm -rf "$SITE_DIR"
-    mv "${SITE_DIR}-rename" "$SITE_DIR"
-  fi
 }
 
 setup_gh() {
@@ -120,7 +113,6 @@ main() {
   init
   build
   test
-  resume_site_dir
 
   if $_opt_dry_run; then
     exit 0

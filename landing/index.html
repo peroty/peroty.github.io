@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Carl's blogs: Homelab and Insomniac's Dream Sequence.">
+    <title>Carl's blogs</title>
+    <style>
+      :root{color-scheme:light;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#18232a;background:#f3f4f1}
+      *{box-sizing:border-box}
+      body{margin:0}
+      main{width:min(1080px,calc(100% - 40px));margin:0 auto;padding:clamp(48px,8vw,100px) 0 80px}
+      .eyebrow{margin:0 0 14px;color:#33635b;font-size:.75rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase}
+      h1{font-size:clamp(2.7rem,6vw,5rem);line-height:1.05;letter-spacing:-.055em;margin:0 0 18px}
+      .intro{max-width:36rem;margin:0 0 48px;color:#52616a;font-size:1.13rem;line-height:1.6}
+      .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+      .card{display:block;overflow:hidden;border:1px solid #dce2dd;border-radius:18px;background:#fff;color:inherit;text-decoration:none;box-shadow:0 10px 30px #18232a0b;transition:transform .18s ease,box-shadow .18s ease}
+      .card:hover{transform:translateY(-4px);box-shadow:0 18px 40px #18232a1c}
+      .card:focus-visible{outline:3px solid #247d72;outline-offset:4px}
+      .preview{display:block;width:100%;aspect-ratio:8/5;object-fit:cover;object-position:top;border-bottom:1px solid #e7ebe7;background:#e5e9e5}
+      .card-body{padding:24px 26px 27px}
+      .type{color:#427167;font-size:.75rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase}
+      h2{font-size:1.55rem;line-height:1.2;letter-spacing:-.025em;margin:9px 0}
+      .card p{min-height:3em;margin:0 0 20px;color:#59656b;line-height:1.5}
+      .open{font-weight:700;color:#205c54}
+      .open::after{content:" →"}
+      @media(max-width:700px){.grid{grid-template-columns:1fr}.intro{margin-bottom:32px}.card p{min-height:0}}
+      @media(prefers-reduced-motion:reduce){.card{transition:none}}
+    </style>
+  </head>
+  <body>
+    <main>
+      <p class="eyebrow">peroty.github.io</p>
+      <h1>Carl's blogs</h1>
+      <p class="intro">Two places for writing, projects, and notes. Pick the one you want to explore.</p>
+      <div class="grid">
+        <a class="card" href="/homelab/">
+          <img class="preview" src="/previews/homelab.webp" alt="Screenshot of the Homelab homepage" width="640" height="400">
+          <div class="card-body">
+            <span class="type">Projects and experiments</span>
+            <h2>Homelab</h2>
+            <p>Down in the lab.</p>
+            <span class="open">Visit Homelab</span>
+          </div>
+        </a>
+        <a class="card" href="/11ty-blog/">
+          <img class="preview" src="/previews/insomniacs-dream-sequence.webp" alt="Screenshot of the Insomniac's Dream Sequence homepage" width="640" height="400">
+          <div class="card-body">
+            <span class="type">Thoughts, notes, and links</span>
+            <h2>Insomniac's Dream Sequence</h2>
+            <p>A collection of thoughts, notes, and links.</p>
+            <span class="open">Visit the blog</span>
+          </div>
+        </a>
+      </div>
+    </main>
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.getRegistration('/').then(registration => {
+          if (registration && new URL(registration.scope).pathname === '/') {
+            registration.unregister();
+          }
+        });
+      }
+      if ('caches' in window) {
+        caches.keys().then(names => names.filter(name => name.startsWith('chirpy-')).forEach(name => caches.delete(name)));
+      }
+    </script>
+  </body>
+</html>
